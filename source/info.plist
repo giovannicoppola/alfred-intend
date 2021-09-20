@@ -698,6 +698,10 @@
 		<key>TOKEN</key>
 		<string>djnnamrjux6asm4ixub8</string>
 	</dict>
+	<key>variablesdontexport</key>
+	<array>
+		<string>TOKEN</string>
+	</array>
 	<key>version</key>
 	<string>0.1</string>
 	<key>webaddress</key>
