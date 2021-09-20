@@ -87,7 +87,7 @@ Most features are self-explanatory, briefly described below:
 <a name="acknowledgments"></a>
 # Acknowledgments
 
-- [Dean Jackson](https://github.com/deanishe) for creating the `Workflow` package and for their incredible help on the Alfred mailing list. 
+- [Dean Jackson](https://github.com/deanishe) for creating the `alfred-workflow` package and for their incredible help on the Alfred mailing list. 
 - Complice's creator [Malcom Ocean](https://github.com/malcolmocean) for assistance with the API
 
 <a name="changelog"></a>
