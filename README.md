@@ -30,7 +30,7 @@
 
 
 
-1. Download the most recent release of `alfred-complice` from Github and double-click to install
+1. Download the [most recent release](https://github.com/giovannicoppola/alfred-complice/releases/latest) of `alfred-complice` from Github and double-click to install
 2. Get your Complice Auth Token 
 	- in [Complice](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
 	_Example_: if the string is `{"username":"johndoe","auth_token":"abcd1234"}`, copy `abcd1234` (without quotes)
