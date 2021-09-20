@@ -93,7 +93,7 @@ Most features are self-explanatory, briefly described below:
 <a name="changelog"></a>
 # Changelog
 
-- 09-17-2021: version 1.0
+- 09-17-2021: version 0.1
 
 <a name="feedback"></a>
 # Feedback
