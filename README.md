@@ -5,7 +5,11 @@
 
 
 ![](images/complice-screencast.gif "")
-
+<a href="https://github.com/giovannicoppola/alfred-complice/releases/latest/">
+  
+  <img alt="Downloads"
+       src="https://img.shields.io/github/downloads/giovannicoppola/alfred-complice/total?color=purple&label=Downloads"><br/>
+</a>
 <!-- MarkdownTOC autolink="true" bracket="round" depth="3" autoanchor="true" -->
 
 - [Setting up](#setting-up)
