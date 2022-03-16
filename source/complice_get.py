@@ -1,29 +1,34 @@
-#!/usr/bin/env python
-# encoding: utf-8
+#!/usr/bin/python3 
 
 ### python script to interact with Complice
 ### giovanni, Saturday, April 10, 2021, 11:20 AM
+## version 0.2 for Python3
 
 
-import sys
 import json
-import time
 from datetime import datetime
-from workflow import Workflow3, ICON_WEB, web
 import urllib
 from config import POMOLENGTH, TIMERLENGTH, TOKEN
+import urllib.request 
+from urllib.parse import urlencode
 
+
+def log(s, *args):
+    if args:
+        s = s % args
+    print(s, file=sys.stderr)
 
 def get_intentions():
     
     url= 'https://complice.co/api/v0/u/me/today/core.json' 
-    params = dict(auth_token=TOKEN)
-    r = web.get(url, params)
+    params = urlencode({'auth_token':TOKEN}) 
+    myURL=url+"?"+params
+   
+    URLrequest = urllib.request.Request(myURL)
 
-    r.raise_for_status()
-
-    result = r.json()
-    intentions = result['list']
+    with urllib.request.urlopen(URLrequest) as URLresponse: 
+            resultURL = json.load(URLresponse)
+            intentions = resultURL['list']
    
     return intentions
 
@@ -32,13 +37,14 @@ def get_intentions():
 def get_goals():
     
     url= 'https://complice.co/api/v0/u/me/goals/active.json' 
-    params = dict(auth_token=TOKEN)
-    r = web.get(url, params)
+    params = urlencode({'auth_token':TOKEN}) 
+    myURL=url+"?"+params
+   
+    URLrequest = urllib.request.Request(myURL)
 
-    r.raise_for_status()
-
-    result = r.json()
-    goals = result['goals']
+    with urllib.request.urlopen(URLrequest) as URLresponse: 
+            resultURL = json.load(URLresponse)
+            goals = resultURL['goals']
     
     
     return goals
@@ -46,33 +52,32 @@ def get_goals():
 
 
 
-def main(wf):
+
+def main():
     
+    result = {
+        "items": []}
     intentions = get_intentions()
-    
-    
-           
+            
     for myIntention in intentions:
         if 'd' in myIntention:
-             subString="✅ Completed"
-             myArg = ""
+                subString="✅ Completed"
+                myArg = ""
         else:
             subString="↩️ to complete"
             myArg = myIntention['zid']
 
-        wf.add_item(title=myIntention['text'],
-            subtitle=subString,
-            valid='TRUE',
-            arg=myArg)
-      
-    wf.send_feedback()
 
+        result["items"].append({
+                "title": myIntention['text'],
+                "subtitle": subString,
+                
+                "valid":'TRUE',
+                        
+                "arg":myArg})
+            
 
+    print (json.dumps(result))
 
-
-if __name__ == u"__main__":
-    wf = Workflow3()
-    log = wf.logger
-    sys.exit(wf.run(main))
-
-
+if __name__ == "__main__":
+    main()

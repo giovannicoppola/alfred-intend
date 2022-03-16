@@ -47,21 +47,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>11E10EB0-A092-4721-932D-BF5F9CC94BE0</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8354C1BF-5302-4F40-87A2-DE47FB9EB96C</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>sourceoutputuid</key>
-				<string>7D432365-97BC-4845-8B06-4DAD4BA5A86A</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>1A2B9EC7-196C-4F9B-A548-610EDF45BC4D</key>
 		<array>
 			<dict>
@@ -101,6 +86,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>43F3A72C-3F49-4A74-8859-3B979E640141</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>94991CA8-0F89-404B-83E4-3A1AC7199023</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>8354C1BF-5302-4F40-87A2-DE47FB9EB96C</key>
 		<array>
 			<dict>
@@ -113,12 +111,22 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D405B328-3444-4B0B-A41B-8851F246F01C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>94991CA8-0F89-404B-83E4-3A1AC7199023</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>11E10EB0-A092-4721-932D-BF5F9CC94BE0</string>
+				<string>8354C1BF-5302-4F40-87A2-DE47FB9EB96C</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -196,7 +204,8 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python complice_post.py ${1}</string>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+python3 complice_post.py ${1}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -254,6 +263,19 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>triggerid</key>
+				<string>Restart</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>43F3A72C-3F49-4A74-8859-3B979E640141</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -277,7 +299,8 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>python complice_get.py</string>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+python3 complice_get.py</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -332,12 +355,63 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>!c</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+python3 complice_menu.py</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>your Complice</string>
+				<key>type</key>
+				<integer>5</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A5AC5494-9C4B-4CCC-A5C8-9B30A980DBCC</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python complice_complete.py ${1}</string>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+python3 complice_complete.py ${1}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -372,55 +446,6 @@
 			<string>723E036D-998A-4C95-8998-010BC32F55E7</string>
 			<key>version</key>
 			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<true/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>!c</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>1</integer>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>script</key>
-				<string>python complice_menu.py</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>your Complice</string>
-				<key>type</key>
-				<integer>5</integer>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>A5AC5494-9C4B-4CCC-A5C8-9B30A980DBCC</string>
-			<key>version</key>
-			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -469,36 +494,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>conditions</key>
-				<array>
-					<dict>
-						<key>inputstring</key>
-						<string></string>
-						<key>matchcasesensitive</key>
-						<false/>
-						<key>matchmode</key>
-						<integer>1</integer>
-						<key>matchstring</key>
-						<string></string>
-						<key>outputlabel</key>
-						<string>Script</string>
-						<key>uid</key>
-						<string>7D432365-97BC-4845-8B06-4DAD4BA5A86A</string>
-					</dict>
-				</array>
-				<key>elselabel</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.conditional</string>
-			<key>uid</key>
-			<string>11E10EB0-A092-4721-932D-BF5F9CC94BE0</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>delimiter</key>
 				<string>;;</string>
 				<key>trimarguments</key>
@@ -538,12 +533,32 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>Restart</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<false/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D405B328-3444-4B0B-A41B-8851F246F01C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>python complice_triager.py "${myAction}"</string>
+				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
+python3 complice_triager.py "${myAction}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -609,13 +624,6 @@
 			<key>ypos</key>
 			<integer>525</integer>
 		</dict>
-		<key>11E10EB0-A092-4721-932D-BF5F9CC94BE0</key>
-		<dict>
-			<key>xpos</key>
-			<integer>1145</integer>
-			<key>ypos</key>
-			<integer>320</integer>
-		</dict>
 		<key>1A2B9EC7-196C-4F9B-A548-610EDF45BC4D</key>
 		<dict>
 			<key>xpos</key>
@@ -636,6 +644,13 @@
 			<integer>50</integer>
 			<key>ypos</key>
 			<integer>300</integer>
+		</dict>
+		<key>43F3A72C-3F49-4A74-8859-3B979E640141</key>
+		<dict>
+			<key>xpos</key>
+			<integer>655</integer>
+			<key>ypos</key>
+			<integer>125</integer>
 		</dict>
 		<key>723E036D-998A-4C95-8998-010BC32F55E7</key>
 		<dict>
@@ -674,6 +689,13 @@
 			<key>ypos</key>
 			<integer>305</integer>
 		</dict>
+		<key>D405B328-3444-4B0B-A41B-8851F246F01C</key>
+		<dict>
+			<key>xpos</key>
+			<integer>1490</integer>
+			<key>ypos</key>
+			<integer>455</integer>
+		</dict>
 		<key>E2D64B4B-4EBE-47CB-BE65-FAD53830A4BB</key>
 		<dict>
 			<key>xpos</key>
@@ -694,7 +716,7 @@
 		<key>POMOLENGTH</key>
 		<string>25</string>
 		<key>TIMERLENGTH</key>
-		<string>20</string>
+		<string>10</string>
 		<key>TOKEN</key>
 		<string></string>
 	</dict>
@@ -703,7 +725,7 @@
 		<string>TOKEN</string>
 	</array>
 	<key>version</key>
-	<string>0.1</string>
+	<string>0.2</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>

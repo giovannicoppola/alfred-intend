@@ -1,45 +1,23 @@
-# encoding: utf-8
+#!/usr/bin/python3 
 ### python script to interact with Complice
 ### giovanni, Wednesday, April 21, 2021, 5:48 AM
+## Tuesday, March 15, 2022, 3:43 PM Python3 version, no dependencies
 
 
 import sys
-from workflow import Workflow3, ICON_WEB, web
-import time
-import re
-
-import requests
-import json
-
 
 from config import POMOLENGTH, TIMERLENGTH, TOKEN
-
-
-def complete_intention(myID):
-    
-    
-    url = 'https://complice.co/api/v0/u/me/completeById/'+myID
-    
-       
-    datastring = dict()
-    datastring['auth_token'] = TOKEN
-    
-    r = web.post(url, params=datastring)
-    r.raise_for_status()
+from complice_post import complete_intention
 
 
 
-
-
-def main(wf):
-    myInput = wf.args[0]
+def main():
+    myInput = sys.argv[1]
     complete_intention (myInput)
     
-    
 
 
-if __name__ == u"__main__":
-    wf = Workflow3()
-    log = wf.logger
-    sys.exit(wf.run(main))
+if __name__ == "__main__":
+    main()
+
 

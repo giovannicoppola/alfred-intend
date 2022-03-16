@@ -98,6 +98,7 @@ Most features are self-explanatory, briefly described below:
 # Changelog
 
 - 09-17-2021: version 0.1
+- 03-16-2021: version 0.2 (Python3, reduced dependencies)
 
 <a name="feedback"></a>
 # Feedback
