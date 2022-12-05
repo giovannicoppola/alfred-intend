@@ -38,12 +38,11 @@
 	- in [Complice](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
 	_Example_: if the string is `{"username":"johndoe","auth_token":"abcd1234"}`, copy `abcd1234` (without quotes)
 
-3. In Alfred, open the 'Configure Workflow and Variables' window in `alfred-complice` preferences
-	<img src='images/alfred_prefs.png' width="500">	
-			
+3. In Alfred, open the 'Configure Workflow' window in `alfred-complice` preferences
+				
 	- set the `TOKEN` variable to the Complice Auth Token retrieved in Step 2
 	- _Optional:_ set the `POMOLENGTH` variable (predefined value: 25 min)
-	- _Optional:_ set the `TIMERLENGTH` variable (predefined value: 20 min)
+	- _Optional:_ set the `TIMERLENGTH` variable (predefined value: 10 min)
 	
 4. _Optional:_ Setup a hotkey to launch alfred-complice
 5. _Optional:_ Change the keyword to launch alfred-complice
