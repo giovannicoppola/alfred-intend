@@ -264,6 +264,8 @@ python3 complice_post.py ${1}</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
 				<key>triggerid</key>
 				<string>Restart</string>
 			</dict>
@@ -370,7 +372,7 @@ python3 complice_get.py</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
-				<string>!c</string>
+				<string>{var:mainweyword}</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -487,6 +489,8 @@ python3 complice_complete.py ${1}</string>
 				</array>
 				<key>elselabel</key>
 				<string>else</string>
+				<key>hideelse</key>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.conditional</string>
@@ -500,6 +504,10 @@ python3 complice_complete.py ${1}</string>
 			<dict>
 				<key>delimiter</key>
 				<string>;;</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
 				<key>trimarguments</key>
 				<true/>
 				<key>variableprefix</key>
@@ -601,136 +609,235 @@ python3 complice_triager.py "${myAction}"</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>A workflow to manage your Complice intentions and timers with Alfred.</string>
+	<string>A workflow to manage your Complice intentions and timers with Alfred.
+
+Most features are self-explanatory, briefly described below:
+
+## Intentions
+- Add new intentions (remember to add the goal number (e.g. `1)`) otherwise it will be entered as `&amp;`)
+- List intentions for the day
+- Complete intentions
+
+## Pomodoros 🍅
+- Start a pomodoro (default length set in Settings) 
+
+### 🍅 While running
+
+- Check remaining 🍅 time
+- Cancel 🍅
+
+## Timers ⏳
+- Start a timer (default length set in Settings) 
+- Start a 'targeted' timer to the top of the hour (:00) or next half-hour (:30)
+
+### ⏳ While running
+
+- Check remaining ⏳ time 
+- Pause and restart ⏳
+- Cancel ⏳</string>
 	<key>uidata</key>
 	<dict>
 		<key>0A700879-37BA-4674-B2DB-91331E62C72B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>940</integer>
+			<real>940</real>
 			<key>ypos</key>
-			<integer>45</integer>
+			<real>45</real>
 		</dict>
 		<key>0D775958-2FE8-4B11-B4A8-A300D5542745</key>
 		<dict>
 			<key>note</key>
 			<string>post new intention</string>
 			<key>xpos</key>
-			<integer>1175</integer>
+			<real>1175</real>
 			<key>ypos</key>
-			<integer>45</integer>
+			<real>45</real>
 		</dict>
 		<key>1123491C-E663-421B-91FE-8687410D00A6</key>
 		<dict>
 			<key>note</key>
 			<string>triager</string>
 			<key>xpos</key>
-			<integer>945</integer>
+			<real>945</real>
 			<key>ypos</key>
-			<integer>525</integer>
+			<real>525</real>
 		</dict>
 		<key>1A2B9EC7-196C-4F9B-A548-610EDF45BC4D</key>
 		<dict>
 			<key>xpos</key>
-			<integer>590</integer>
+			<real>590</real>
 			<key>ypos</key>
-			<integer>330</integer>
+			<real>330</real>
 		</dict>
 		<key>2EB9C033-FA26-4E27-AD56-431A9E1F2927</key>
 		<dict>
 			<key>xpos</key>
-			<integer>455</integer>
+			<real>455</real>
 			<key>ypos</key>
-			<integer>330</integer>
+			<real>330</real>
 		</dict>
 		<key>31825A2C-AB94-4F86-A662-67B3D7C91F02</key>
 		<dict>
 			<key>xpos</key>
-			<integer>50</integer>
+			<real>50</real>
 			<key>ypos</key>
-			<integer>300</integer>
+			<real>300</real>
 		</dict>
 		<key>43F3A72C-3F49-4A74-8859-3B979E640141</key>
 		<dict>
 			<key>xpos</key>
-			<integer>655</integer>
+			<real>655</real>
 			<key>ypos</key>
-			<integer>125</integer>
+			<real>125</real>
 		</dict>
 		<key>723E036D-998A-4C95-8998-010BC32F55E7</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1490</integer>
+			<real>1490</real>
 			<key>ypos</key>
-			<integer>300</integer>
+			<real>300</real>
 		</dict>
 		<key>8354C1BF-5302-4F40-87A2-DE47FB9EB96C</key>
 		<dict>
 			<key>note</key>
 			<string>completing intention</string>
 			<key>xpos</key>
-			<integer>1285</integer>
+			<real>1285</real>
 			<key>ypos</key>
-			<integer>300</integer>
+			<real>300</real>
 		</dict>
 		<key>94991CA8-0F89-404B-83E4-3A1AC7199023</key>
 		<dict>
 			<key>xpos</key>
-			<integer>935</integer>
+			<real>935</real>
 			<key>ypos</key>
-			<integer>300</integer>
+			<real>300</real>
 		</dict>
 		<key>A5AC5494-9C4B-4CCC-A5C8-9B30A980DBCC</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<real>240</real>
 			<key>ypos</key>
-			<integer>300</integer>
+			<real>300</real>
 		</dict>
 		<key>B9FE7955-EB90-4633-80A5-9B5B73C0AE42</key>
 		<dict>
 			<key>xpos</key>
-			<integer>730</integer>
+			<real>730</real>
 			<key>ypos</key>
-			<integer>305</integer>
+			<real>305</real>
 		</dict>
 		<key>D405B328-3444-4B0B-A41B-8851F246F01C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1490</integer>
+			<real>1490</real>
 			<key>ypos</key>
-			<integer>455</integer>
+			<real>455</real>
 		</dict>
 		<key>E2D64B4B-4EBE-47CB-BE65-FAD53830A4BB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1405</integer>
+			<real>1405</real>
 			<key>ypos</key>
-			<integer>45</integer>
+			<real>45</real>
 		</dict>
 		<key>E523F176-092F-4354-9930-C482F56606CA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>1175</integer>
+			<real>1175</real>
 			<key>ypos</key>
-			<integer>525</integer>
+			<real>525</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>POMOLENGTH</key>
-		<string>25</string>
-		<key>TIMERLENGTH</key>
-		<string>10</string>
-		<key>TOKEN</key>
-		<string>djnnamrjux6asm4ixub8</string>
-	</dict>
-	<key>variablesdontexport</key>
+	<key>userconfigurationconfig</key>
 	<array>
-		<string>TOKEN</string>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>available at https://complice.co/$USERNAME/auth_token while you are logged in</string>
+			<key>label</key>
+			<string>Complice API Token</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>TOKEN</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>25</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Default pomodoro length</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>POMOLENGTH</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>10</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Default Timer length</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>TIMERLENGTH</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>!c</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mainweyword</string>
+		</dict>
 	</array>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-complice</string>
 </dict>

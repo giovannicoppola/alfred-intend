@@ -22,8 +22,7 @@
 <!-- /MarkdownTOC -->
 
 
-<a name="setting-up"></a>
-# Setting up
+<h1 id="setting-up">Setting up ⚙️</h1>
 
 ### Needed
 
@@ -52,12 +51,11 @@
 
 
 
-<a name="usage"></a>
-# Basic Usage 
+<h1 id="usage">Basic Usage 📖</h1>
 
 Most features are self-explanatory, briefly described below:
 ## Intentions
-- Add new intentions (remember to add the goal number (e.g. `1)`) otherwise it will be entered as )
+- Add new intentions (remember to add the goal number (e.g. `1)`) otherwise it will be entered as `&`)
 - List intentions for the day
 - Complete intentions
 
@@ -81,27 +79,25 @@ Most features are self-explanatory, briefly described below:
 
 
 
-<a name="known-issues"></a>
-# Known issues 
+<h1 id="known-issues">Limitations & Known issues ⚠️</h1>
 
 
 - Pausing a targeted time will shift the end time accordingly (for example, if you pause for 10 min and then restart a timer that is supposed to end at 9:30, it will end at 9:40). Unsure how to deal with this special case: 1) not allow pausing for targeted timers or 2) calculate the new timer duration after pausing. I will add this feature in future releases based on interest and feedback. 
 - nothing else for now, but please let me know if you see anything!
 
-<a name="acknowledgments"></a>
-# Acknowledgments
+<h1 id="acknowledgments">Acknowledgments 😀</h1>
 
 - [Dean Jackson](https://github.com/deanishe) for creating the `alfred-workflow` package and for their incredible help on the Alfred mailing list. 
 - Complice's creator [Malcom Ocean](https://github.com/malcolmocean) for assistance with the API
 
-<a name="changelog"></a>
-# Changelog
+<h1 id="changelog">Changelog 🧰</h1>
 
-- 09-17-2021: version 0.1
+- 12-04-2022: version 0.3 (Alfred 5)
 - 03-16-2021: version 0.2 (Python3, reduced dependencies)
+- 09-17-2021: version 0.1
 
-<a name="feedback"></a>
-# Feedback
+
+<h1 id="feedback">Feedback 🧐</h1>
 
 Feedback welcome! If you notice a bug, or have ideas for new features, please feel free to get in touch either here, or on the [Alfred](https://www.alfredforum.com) forum. 
 
