@@ -189,11 +189,11 @@
 	<key>createdby</key>
 	<string>giovanni</string>
 	<key>description</key>
-	<string>An Alfred workflow for Complice</string>
+	<string>An Alfred workflow for Intend</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Alfred Complice</string>
+	<string>Alfred Intend</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -836,8 +836,10 @@ Most features are self-explanatory, briefly described below:
 			<string>mainweyword</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
-	<string>0.3</string>
+	<string>0.4</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-complice</string>
 </dict>

@@ -11,7 +11,7 @@ import urllib
 from config import POMOLENGTH, TIMERLENGTH, TOKEN
 import urllib.request 
 from urllib.parse import urlencode
-
+import sys
 
 def log(s, *args):
     if args:
@@ -23,13 +23,13 @@ def get_intentions():
     url= 'https://complice.co/api/v0/u/me/today/core.json' 
     params = urlencode({'auth_token':TOKEN}) 
     myURL=url+"?"+params
-   
+    
     URLrequest = urllib.request.Request(myURL)
-
+    
     with urllib.request.urlopen(URLrequest) as URLresponse: 
             resultURL = json.load(URLresponse)
             intentions = resultURL['list']
-   
+    
     return intentions
 
 
@@ -69,7 +69,7 @@ def main():
 
 
         result["items"].append({
-                "title": myIntention['text'],
+                "title": myIntention['t'],
                 "subtitle": subString,
                 
                 "valid":'TRUE',

@@ -1,6 +1,7 @@
-# alfred-complice 
+# alfred-intend 
+(previously Alfred-Complice)
 
-### A workflow to manage your [Complice](https://complice.co/) intentions and timers with  [Alfred](https://www.alfredapp.com/)
+### A workflow to manage your [Intend](https://complice.co/) intentions and timers with  [Alfred](https://www.alfredapp.com/)
 
 
 
@@ -27,25 +28,25 @@
 ### Needed
 
 - Alfred with Powerpack license
-- Complice account (use [this](https://complice.co/?r=4z020qsycl) link to get a bonus third week of free trial)
-- Complice API Token (available [here](https://complice.co/$USERNAME/auth_token) while you are logged in)
+- Intend account (use [this](https://complice.co/?r=4z020qsycl) link to get a bonus third week of free trial)
+- Intend API Token (available [here](https://complice.co/$USERNAME/auth_token) while you are logged in)
 
 
 
 
-1. Download the [most recent release](https://github.com/giovannicoppola/alfred-complice/releases/latest) of `alfred-complice` from Github and double-click to install
-2. Get your Complice Auth Token 
-	- in [Complice](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
+1. Download the [most recent release](https://github.com/giovannicoppola/alfred-complice/releases/latest) of `alfred-intend` from Github and double-click to install
+2. Get your Intend Auth Token 
+	- in [Intend](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
 	_Example_: if the string is `{"username":"johndoe","auth_token":"abcd1234"}`, copy `abcd1234` (without quotes)
 
-3. In Alfred, open the 'Configure Workflow' window in `alfred-complice` preferences
+3. In Alfred, open the 'Configure Workflow' window in `Alfred Intend` preferences
 				
-	- set the `TOKEN` variable to the Complice Auth Token retrieved in Step 2
+	- set the `TOKEN` variable to the Intend Auth Token retrieved in Step 2
 	- _Optional:_ set the `POMOLENGTH` variable (predefined value: 25 min)
 	- _Optional:_ set the `TIMERLENGTH` variable (predefined value: 10 min)
 	
-4. _Optional:_ Setup a hotkey to launch alfred-complice
-5. _Optional:_ Change the keyword to launch alfred-complice
+4. _Optional:_ Setup a hotkey to launch alfred-intend
+5. _Optional:_ Change the keyword to launch alfred-intend
 	- keyword currently set to `!c`
 
 
@@ -87,10 +88,11 @@ Most features are self-explanatory, briefly described below:
 <h1 id="acknowledgments">Acknowledgments 😀</h1>
 
 - [Dean Jackson](https://github.com/deanishe) for creating the `alfred-workflow` package and for their incredible help on the Alfred mailing list. 
-- Complice's creator [Malcom Ocean](https://github.com/malcolmocean) for assistance with the API
+- Intend's creator [Malcom Ocean](https://github.com/malcolmocean) for assistance with the API
 
 <h1 id="changelog">Changelog 🧰</h1>
 
+- 07-15-2023: version 0.4 (Rebranding to Intend, bug fixes)
 - 12-04-2022: version 0.3 (Alfred 5)
 - 03-16-2021: version 0.2 (Python3, reduced dependencies)
 - 09-17-2021: version 0.1
