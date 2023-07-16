@@ -204,8 +204,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
+				<string>export PYTHONPATH="$PWD/lib"
 python3 complice_post.py ${1}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -302,8 +301,7 @@ python3 complice_post.py ${1}</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
+				<string>export PYTHONPATH="$PWD/lib"
 python3 complice_get.py</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -384,8 +382,7 @@ python3 complice_get.py</string>
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
+				<string>export PYTHONPATH="$PWD/lib"
 python3 complice_menu.py</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -394,7 +391,7 @@ python3 complice_menu.py</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>your Complice</string>
+				<string>your Intend</string>
 				<key>type</key>
 				<integer>5</integer>
 				<key>withspace</key>
@@ -415,8 +412,7 @@ python3 complice_menu.py</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
+				<string>export PYTHONPATH="$PWD/lib"
 python3 complice_complete.py ${1}</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -569,8 +565,7 @@ python3 complice_complete.py ${1}</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
-export PYTHONPATH="$PWD/lib"
+				<string>export PYTHONPATH="$PWD/lib"
 python3 complice_triager.py "${myAction}"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -609,7 +604,7 @@ python3 complice_triager.py "${myAction}"</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>A workflow to manage your Complice intentions and timers with Alfred.
+	<string>A workflow to manage your Intend intentions and timers with Alfred.
 
 Most features are self-explanatory, briefly described below:
 
@@ -764,9 +759,9 @@ Most features are self-explanatory, briefly described below:
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>available at https://complice.co/$USERNAME/auth_token while you are logged in</string>
+			<string>available at https://intend.do/$USERNAME/auth_token while you are logged in</string>
 			<key>label</key>
-			<string>Complice API Token</string>
+			<string>Intend API Token</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>

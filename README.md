@@ -1,15 +1,15 @@
 # alfred-intend 
 (previously Alfred-Complice)
 
-### A workflow to manage your [Intend](https://complice.co/) intentions and timers with  [Alfred](https://www.alfredapp.com/)
+### A workflow to manage your [Intend](https://intend.do/) intentions and timers with  [Alfred](https://www.alfredapp.com/)
 
 
 
-![](images/complice-screencast.gif "")
-<a href="https://github.com/giovannicoppola/alfred-complice/releases/latest/">
+![](images/intend-screencast.gif "")
+<a href="https://github.com/giovannicoppola/alfred-intend/releases/latest/">
   
   <img alt="Downloads"
-       src="https://img.shields.io/github/downloads/giovannicoppola/alfred-complice/total?color=purple&label=Downloads"><br/>
+       src="https://img.shields.io/github/downloads/giovannicoppola/alfred-intend/total?color=purple&label=Downloads"><br/>
 </a>
 <!-- MarkdownTOC autolink="true" bracket="round" depth="3" autoanchor="true" -->
 
@@ -28,15 +28,15 @@
 ### Needed
 
 - Alfred with Powerpack license
-- Intend account (use [this](https://complice.co/?r=4z020qsycl) link to get a bonus third week of free trial)
-- Intend API Token (available [here](https://complice.co/$USERNAME/auth_token) while you are logged in)
+- Intend account (use [this](https://intend.do/?r=4z020qsycl) link to get a bonus third week of free trial)
+- Intend API Token (available [here](https://intend.do/$USERNAME/auth_token) while you are logged in)
 
 
 
 
-1. Download the [most recent release](https://github.com/giovannicoppola/alfred-complice/releases/latest) of `alfred-intend` from Github and double-click to install
+1. Download the [most recent release](https://github.com/giovannicoppola/alfred-intend/releases/latest) of `alfred-intend` from Github and double-click to install
 2. Get your Intend Auth Token 
-	- in [Intend](https://complice.co/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
+	- in [Intend](https://intend.do/$USERNAME/auth_token), Select and copy to clipboard the auth token. 
 	_Example_: if the string is `{"username":"johndoe","auth_token":"abcd1234"}`, copy `abcd1234` (without quotes)
 
 3. In Alfred, open the 'Configure Workflow' window in `Alfred Intend` preferences
