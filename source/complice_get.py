@@ -18,6 +18,11 @@ def log(s, *args):
         s = s % args
     print(s, file=sys.stderr)
 
+def sort_key(d):
+    return d.get('d', False), d.get('_id', None)
+
+
+
 def get_intentions():
     
     url= 'https://complice.co/api/v0/u/me/today/core.json' 
@@ -29,8 +34,10 @@ def get_intentions():
     with urllib.request.urlopen(URLrequest) as URLresponse: 
             resultURL = json.load(URLresponse)
             intentions = resultURL['list']
+            sorted_intentions = sorted(intentions, key=sort_key)
+            #log (sorted_intentions)
     
-    return intentions
+    return sorted_intentions
 
 
 
