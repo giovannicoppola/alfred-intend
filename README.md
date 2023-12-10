@@ -92,6 +92,8 @@ Most features are self-explanatory, briefly described below:
 
 <h1 id="changelog">Changelog 🧰</h1>
 
+- 12-10-2023: version 0.4.2 URL updates to intend.do
+- 07-18-2023: version 0.4.1 sorting intentions
 - 07-15-2023: version 0.4 (Rebranding to Intend, bug fixes)
 - 12-04-2022: version 0.3 (Alfred 5)
 - 03-16-2021: version 0.2 (Python3, reduced dependencies)
