@@ -47,7 +47,7 @@ result = {"rerun": 1,
     },
     "items": []}
 
-url= 'https://complice.co/api/v0/u/me/today/timer/all'
+url= 'https://intend.do/api/v0/u/me/today/timer/all'
 params = urlencode({'auth_token':TOKEN}) 
 myURL=url+"?"+params
 URLrequest = urllib.request.Request(myURL)

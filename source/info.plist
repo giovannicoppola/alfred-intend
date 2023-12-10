@@ -834,7 +834,7 @@ Most features are self-explanatory, briefly described below:
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>0.4.1</string>
+	<string>0.4.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/giovannicoppola/alfred-intend</string>
 </dict>

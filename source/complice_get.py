@@ -25,7 +25,7 @@ def sort_key(d):
 
 def get_intentions():
     
-    url= 'https://complice.co/api/v0/u/me/today/core.json' 
+    url= 'https://intend.do/api/v0/u/me/today/core.json' 
     params = urlencode({'auth_token':TOKEN}) 
     myURL=url+"?"+params
     
@@ -43,7 +43,7 @@ def get_intentions():
 
 def get_goals():
     
-    url= 'https://complice.co/api/v0/u/me/goals/active.json' 
+    url= 'https://intend.do/api/v0/u/me/goals/active.json' 
     params = urlencode({'auth_token':TOKEN}) 
     myURL=url+"?"+params
    
