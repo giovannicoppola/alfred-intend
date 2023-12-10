@@ -18,6 +18,7 @@ import urllib.request
 import json
 
 from urllib.parse import urlencode
+import sys
 
 
 def log(s, *args):
@@ -37,6 +38,7 @@ random.seed(seed)
 
 currTime = int (time.time())
 intentions = get_intentions()
+#log (intentions)
 myIntCount = len (intentions)
 
 result = {"rerun": 1,
