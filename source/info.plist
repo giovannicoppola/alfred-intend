@@ -830,9 +830,26 @@ Most features are self-explanatory, briefly described below:
 			<key>variable</key>
 			<string>mainweyword</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Use Menubar Countdown?</string>
+			</dict>
+			<key>description</key>
+			<string>If checked, Menubar Countdown needs to be installed (brew install --cask menubar-countdown)</string>
+			<key>label</key>
+			<string>Menubar counter</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>USE_TIMER</string>
+		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>0.4.2</string>
 	<key>webaddress</key>

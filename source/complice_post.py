@@ -11,6 +11,54 @@ from config import POMOLENGTH, TIMERLENGTH, TOKEN
 from lib import requests
 from lib.requests.structures import CaseInsensitiveDict
 
+import os
+
+
+def startMenubar(menubarLength):
+
+    
+    from subprocess import Popen, PIPE, run
+
+
+    sprintDurSec = str(int(menubarLength) * 60)
+    scpt = '''
+        on run {sprintDur, Email_Start, Email_StartF, sprintDurSec}
+            display notification ("Starting " & menubarLength & "-min pomo 💪.. GO!") with title (Email_StartF & " emails to clear") subtitle (sprintDur & " min sprint") sound name "Frog"
+
+                
+            tell application "Menubar Countdown"
+        
+                set hours to 0
+                set minutes to sprintDur
+                set seconds to 0
+                set play alert sound to false
+                set repeat alert sound to false
+                set show alert window to false
+                set show notification to false
+                set play notification sound to false
+                set speak announcement to false
+                start timer
+        
+            
+            delay (sprintDurSec as integer)
+            
+                stop timer
+                end tell
+
+            
+            
+            display dialog (menubarLength & "-min pomo completed ✅") with title "Intend pomo completed" buttons {"OK"} default button "OK" giving up after 10 with icon POSIX file ("icon.png" as string)
+            
+        end run'''
+
+    args = [menubarLength]
+            
+    p = Popen(['osascript', '-'] + args, stdin=PIPE, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+    stdout, stderr = p.communicate(scpt)
+        
+
+
+
 
 def complete_intention(myID):
     
@@ -87,6 +135,8 @@ def start_pomo():
     datastring['duration'] = POMOLENGTH
     resp = requests.post(url, data=datastring)
     print(resp.status_code)
+    startMenubar (POMOLENGTH)
+    
 
 
 def cancel_timer():
