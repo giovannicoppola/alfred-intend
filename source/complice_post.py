@@ -7,54 +7,61 @@
 
 import sys
 import time
-from config import POMOLENGTH, TIMERLENGTH, TOKEN
+from config import POMOLENGTH, TIMERLENGTH, TOKEN, log, USE_TIMER
 from lib import requests
 from lib.requests.structures import CaseInsensitiveDict
 
 import os
 
 
-def startMenubar(menubarLength):
+def launchMenubar(menubarLength):
+    from subprocess import Popen, PIPE
 
-    
-    from subprocess import Popen, PIPE, run
-
-
+    # Convert menubarLength to minutes and ensure it's a string for AppleScript
     sprintDurSec = str(int(menubarLength) * 60)
-    scpt = '''
-        on run {sprintDur, Email_Start, Email_StartF, sprintDurSec}
-            display notification ("Starting " & menubarLength & "-min pomo 💪.. GO!") with title (Email_StartF & " emails to clear") subtitle (sprintDur & " min sprint") sound name "Frog"
+    sprintDurMin = str(menubarLength)  
 
-                
-            tell application "Menubar Countdown"
+    #AppleScript
+    scpt = f'''
+    on run argv
+        set sprintDurMin to item 1 of argv
+        set sprintDurSec to item 2 of argv
+        -- display notification "Starting " & sprintDurMin & "-min pomo 💪.. GO!" with title "🍅 Start" subtitle sprintDurMin & " min pomo" sound name "Frog"
         
-                set hours to 0
-                set minutes to sprintDur
-                set seconds to 0
-                set play alert sound to false
-                set repeat alert sound to false
-                set show alert window to false
-                set show notification to false
-                set play notification sound to false
-                set speak announcement to false
-                start timer
         
-            
-            delay (sprintDurSec as integer)
-            
-                stop timer
-                end tell
+        tell application "Menubar Countdown"
+        
+            set hours to 0
+            set minutes to sprintDurMin
+            set seconds to 0
+            set play alert sound to false
+            set repeat alert sound to false
+            set show alert window to false
+            set show notification to false
+            set play notification sound to false
+            set speak announcement to false
+            start timer
+        end tell
+        
+        delay sprintDurSecs as number
 
-            
-            
-            display dialog (menubarLength & "-min pomo completed ✅") with title "Intend pomo completed" buttons {"OK"} default button "OK" giving up after 10 with icon POSIX file ("icon.png" as string)
-            
-        end run'''
+        tell application "Menubar Countdown"
+            stop timer
+        end tell
+        
+        
+        display dialog ("" & sprintDurMin & "-min 🍅 completed ✅") with title "Intend pomo completed"  giving up after 5 with icon POSIX file ("icon.png" as string)
+        
+    end run'''
 
-    args = [menubarLength]
-            
-    p = Popen(['osascript', '-'] + args, stdin=PIPE, stdout=PIPE, stderr=PIPE, universal_newlines=True)
-    stdout, stderr = p.communicate(scpt)
+    # Execute the AppleScript with arguments
+    p = Popen(['osascript', '-e', scpt, sprintDurMin, sprintDurSec], stdin=PIPE, stdout=PIPE, stderr=PIPE, universal_newlines=True)
+    stdout, stderr = p.communicate()
+
+    if stderr:
+        log("Error:", stderr)
+    else:
+        log("Success:", stdout)
         
 
 
@@ -135,7 +142,8 @@ def start_pomo():
     datastring['duration'] = POMOLENGTH
     resp = requests.post(url, data=datastring)
     print(resp.status_code)
-    startMenubar (POMOLENGTH)
+    if USE_TIMER == "1":
+        launchMenubar (POMOLENGTH)
     
 
 
@@ -156,6 +164,9 @@ def start_hourglass():
     
     datastring['duration'] = TIMERLENGTH
     requests.post(url, params=datastring)
+    if USE_TIMER == "1":
+        launchMenubar (TIMERLENGTH)
+    
         
     # debugging
     #with open("myOut.txt", 'a') as f:

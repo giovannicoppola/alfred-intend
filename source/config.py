@@ -5,6 +5,7 @@
 #
 
 import os
+import sys
 
 POMOLENGTH = os.path.expanduser(os.getenv('POMOLENGTH', ''))
 TIMERLENGTH = os.path.expanduser(os.getenv('TIMERLENGTH', ''))
@@ -13,3 +14,7 @@ USE_TIMER = os.path.expanduser(os.getenv('USE_TIMER', ''))
     
 
 	
+def log(s, *args):
+    if args:
+        s = s % args
+    print(s, file=sys.stderr)
