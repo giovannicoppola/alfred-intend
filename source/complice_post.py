@@ -41,11 +41,10 @@ def launchMenubar(menubarLength):
             set play notification sound to false
             set speak announcement to false
             start timer
-        end tell
-        
+                
         delay sprintDurSecs as number
 
-        tell application "Menubar Countdown"
+        
             stop timer
         end tell
         
